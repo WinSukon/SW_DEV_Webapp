@@ -8,7 +8,7 @@ const banner = () => {
                 {/* <h1>hello</h1> */}
                 <Image src={"/img/CovidVaccineSurvey_Header.jpg"} alt='cover' fill={true} objectFit="cover"></Image>
                 <div className={style.bannerText}>
-                    <h1>vaccine book</h1>
+                    <h1>Our Services</h1>
                 </div>
             </div>
 
