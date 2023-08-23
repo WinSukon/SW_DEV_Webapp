@@ -7,7 +7,10 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Banner/>
-      <Card/>
+      <div className={styles.cards}>
+        <Card/>
+    
+      </div>
 
     </main>
   )
