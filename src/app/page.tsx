@@ -10,14 +10,16 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Banner {...data}/>
-      <h2>Hospitals</h2>
+  
       <div className={styles.cards}>
-        <Card title='Chulalongkorn Hospital' img='/img/cardimg.avif'/>
-        <Card title='Rajavithi Hospital' img='/img/cardimg.avif'/>
+        <Card title='Chulalongkorn Hospital' img='/img/Chulalongkorn Hospital.jpg'/>
+        <Card title='Rajavithi Hospital' img='/img/Rajavithi Hospital.jpg'/>
+        <Card title=' Thammasat University Hospital' img='/img/Thammasat University Hospital.jpg'/>
+
 
     
       </div>
-
+     
     </main>
   )
 }
