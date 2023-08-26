@@ -4,11 +4,17 @@ import Banner from '@/components/Banner'
 import Card from '@/components/Card'
 
 export default function Home() {
+  const data={
+    name:'jakrin sukonpongpao'
+  }
   return (
     <main className={styles.main}>
-      <Banner/>
+      <Banner {...data}/>
+      <h2>Hospitals</h2>
       <div className={styles.cards}>
-        <Card/>
+        <Card title='Chulalongkorn Hospital' img='/img/cardimg.avif'/>
+        <Card title='Rajavithi Hospital' img='/img/cardimg.avif'/>
+
     
       </div>
 
