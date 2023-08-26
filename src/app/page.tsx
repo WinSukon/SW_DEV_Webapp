@@ -12,9 +12,9 @@ export default function Home() {
       <Banner {...data}/>
   
       <div className={styles.cards}>
-        <Card title='Chulalongkorn Hospital' img='/img/Chulalongkorn Hospital.jpg'/>
-        <Card title='Rajavithi Hospital' img='/img/Rajavithi Hospital.jpg'/>
-        <Card title=' Thammasat University Hospital' img='/img/Thammasat University Hospital.jpg'/>
+        <Card title='Chulalongkorn Hospital' imgSrc='/img/Chulalongkorn Hospital.jpg'/>
+        <Card title='Rajavithi Hospital' imgSrc='/img/Rajavithi Hospital.jpg'/>
+        <Card title=' Thammasat University Hospital' imgSrc='/img/Thammasat University Hospital.jpg'/>
 
 
     
