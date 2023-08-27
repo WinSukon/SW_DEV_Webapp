@@ -5,7 +5,7 @@ const banner = ({name}:{name:string}) => {
         <div>
 
             <div className={style.banner}>
-                {/* <h1>hello</h1> */}
+
                 <Image src={"/img/CovidVaccineSurvey_Header.jpg"} 
                 alt='cover' 
                 fill={true} 
