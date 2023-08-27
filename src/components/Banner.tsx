@@ -11,8 +11,8 @@ const banner = ({name}:{name:string}) => {
                 fill={true} 
                 objectFit="cover"></Image>
                 <div className={style.bannerText}>
-                    <h1>Our Services</h1>
-                    <p>{name}</p>
+                    <h1 className="text-6xl font-medium">Our Services</h1>
+                    <p className="text-2xl font-serif">{name}</p>
                 </div>
             </div>
 
