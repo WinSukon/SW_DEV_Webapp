@@ -17,7 +17,7 @@ const banner = ({name}:{name:string}) => {
             </div> */}
 
 
-            <div className="block h-[80vh] w-[100vw] p-[5px] m-[0px] relative">
+            <div className="block h-[60vh] w-[100vw] p-[5px] m-[0px] relative">
 
                 <Image src={"/img/CovidVaccineSurvey_Header.jpg"} 
                 alt='cover' 
