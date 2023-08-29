@@ -17,7 +17,7 @@ const Card = (prop:{title:string,imgSrc:string}) => {
                 <Image src={prop.imgSrc} alt='Product Picture' fill={true} className="object-cover rounded-t-lg"></Image>
 
             </div>
-            <div className="w-full h-[30%] p-[10px]">{prop.title}</div>
+            <div className="w-full h-[30%] p-[10px] text-center">{prop.title}</div>
         </div>
     );
 }
