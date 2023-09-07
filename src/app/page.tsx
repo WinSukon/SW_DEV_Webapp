@@ -16,8 +16,7 @@ export default function Home() {
       <div className="flex flex-row ">
         <Card {...{title:'Chulalongkorn Hospital' ,imgSrc:'/img/Chulalongkorn Hospital.jpg'}}/>
         <Card title='Rajavithi Hospital' imgSrc='/img/Rajavithi Hospital.jpg'/>
-        {/* <Card title=' Thammasat University Hospital' imgSrc='/img/Thammasat University Hospital.jpg'/> */}
-        <ClientCompCard ><Card title=' Thammasat University Hospital' imgSrc='/img/Thammasat University Hospital.jpg'/></ClientCompCard>
+        <Card title=' Thammasat University Hospital' imgSrc='/img/Thammasat University Hospital.jpg'/>
       </div>
      
     </main>
