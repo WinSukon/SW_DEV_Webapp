@@ -1,13 +1,10 @@
 'use client'
+import {useState} from 'react' 
+import Rating from '@mui/material/Rating';
 
+const ClientCompCard = ({children,title,ratingHandler}:{children:React.ReactNode,title:string,ratingHandler:Function}) => {
 
-const ClientCompCard = ({children}:{children:React.ReactNode}) => {
-
-    function onCardClicked(){
-        alert('card clicked')
-        
-    }
-
+    const [value,setValue]=useState<number | null>(0);
     function onMouseAction(e:React.SyntheticEvent){
         if(e.type==='mouseover'){
             e.currentTarget.classList.remove('shadow-lg')
@@ -27,10 +24,17 @@ const ClientCompCard = ({children}:{children:React.ReactNode}) => {
 
     return ( 
        <div className="w-[250px] h-[300px] rounded-lg m-8 shadow-lg bg-white"
-       onClick={()=>onCardClicked()}
        onMouseOver={(e)=>onMouseAction(e)}
        onMouseOut={(e)=>onMouseAction(e)}>
-        {children}
+            {children}
+            <div className="w-full h-[10%] px-3">     
+                <Rating  value={value} precision={0.05} size="small" 
+                onChange={(e,newValue)=>{
+                    setValue(newValue);
+                    console.log(newValue);
+                    ratingHandler(title,newValue)}
+                    }/>
+            </div>
        </div> 
     );
 }
