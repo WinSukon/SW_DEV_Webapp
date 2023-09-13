@@ -10,7 +10,7 @@ const banner = ({name}:{name:string}) => {
     const imgSrc=["/img/CovidVaccineSurvey_Header.jpg","/img/covid-19-vaccination.webp","/img/vaccine-vial-scaled.jpg","/img/vaccine-banner.jpg"];
 
     return ( 
-        <div>
+        
             <div className="block h-[60vh] w-[100vw] p-[5px] m-[0px] relative" onClick={()=>(setIndex(index+1))}>
 
                 <Image src={imgSrc[index%4]} 
@@ -21,9 +21,12 @@ const banner = ({name}:{name:string}) => {
                     <h1 className="text-6xl font-medium">Our Services</h1>
                     <p className="text-2xl font-serif">{name}</p>
                 </div>
+                
+
+
             </div>
   
-        </div>
+        
 
 
      );
