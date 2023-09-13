@@ -1,8 +1,8 @@
 'use client'
-import {useState} from 'react' 
+import {useState,useEffect} from 'react' 
 import Rating from '@mui/material/Rating';
 
-const ClientCompCard = ({children,title,ratingHandler}:{children:React.ReactNode,title:string,ratingHandler:Function}) => {
+const ClientCompCard = ({children,title,ratingHandler,hospitalRating}:{children:React.ReactNode,title:string,ratingHandler:Function,hospitalRating:Map<string,Number>}) => {
 
     const [value,setValue]=useState<number | null>(0);
     function onMouseAction(e:React.SyntheticEvent){
@@ -22,18 +22,22 @@ const ClientCompCard = ({children,title,ratingHandler}:{children:React.ReactNode
         }
     }
 
+    useEffect(()=>{
+        setValue(Number(hospitalRating.get(title)?.toString()))
+    },[hospitalRating])
+
     return ( 
        <div className="w-[250px] h-[300px] rounded-lg m-8 shadow-lg bg-white"
        onMouseOver={(e)=>onMouseAction(e)}
        onMouseOut={(e)=>onMouseAction(e)}>
             {children}
             <div className="w-full h-[10%] px-3">     
-                <Rating  value={value} precision={0.05} size="small" 
+                <Rating  value={value} precision={0.5} size="small" 
                 onChange={(e,newValue)=>{
                     setValue(newValue);
-                    console.log(newValue);
                     ratingHandler(title,newValue)}
                     }/>
+                
             </div>
        </div> 
     );
