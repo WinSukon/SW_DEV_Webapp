@@ -32,7 +32,7 @@ const ClientCompCard = ({children,title,ratingHandler,hospitalRating}:{children:
        onMouseOut={(e)=>onMouseAction(e)}>
             {children}
             <div className="w-full h-[10%] px-3">     
-                <Rating  value={value} precision={0.5} size="small" 
+                <Rating  value={value} precision={0.05} size="small" 
                 onChange={(e,newValue)=>{
                     setValue(newValue);
                     ratingHandler(title,newValue)}

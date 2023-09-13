@@ -1,7 +1,6 @@
 'use client'
 import {useReducer} from 'react'
 import Card from "./Card";
-import Rating from '@mui/material/Rating';
 
 const CardPanel = () => {
 
@@ -32,10 +31,13 @@ const CardPanel = () => {
 
             </div>
             <div>
-                <div>Rating list</div>
-                {hospitalRating.has('Chulalongkorn Hospital') && <div onClick={()=>dispatchRating({'type':'delete','name':'Chulalongkorn Hospital','rating':0})}>Chulalongkorn Hospital Rating = {hospitalRating.get('Chulalongkorn Hospital')?.toString()}</div>}
-                {hospitalRating.has('Rajavithi Hospital') && <div onClick={()=>dispatchRating({'type':'delete','name':'Rajavithi Hospital','rating':0})}>Rajavithi Hospital Rating = {hospitalRating.get('Rajavithi Hospital')?.toString()}</div>}
-                {hospitalRating.has('Thammasat University Hospital') && <div onClick={()=>dispatchRating({'type':'delete','name':'Thammasat University Hospital','rating':0})}>Thammasat University Hospital Rating = {hospitalRating.get('Thammasat University Hospital')?.toString()}</div>}
+                <div className='text-xl'>Rating list</div>
+                <div className="p-3 ">
+                    {hospitalRating.has('Chulalongkorn Hospital') && <div onClick={()=>dispatchRating({'type':'delete','name':'Chulalongkorn Hospital','rating':0})}>Chulalongkorn Hospital Rating = {hospitalRating.get('Chulalongkorn Hospital')?.toString()}</div>}
+                    {hospitalRating.has('Rajavithi Hospital') && <div onClick={()=>dispatchRating({'type':'delete','name':'Rajavithi Hospital','rating':0})}>Rajavithi Hospital Rating = {hospitalRating.get('Rajavithi Hospital')?.toString()}</div>}
+                    {hospitalRating.has('Thammasat University Hospital') && <div onClick={()=>dispatchRating({'type':'delete','name':'Thammasat University Hospital','rating':0})}>Thammasat University Hospital Rating = {hospitalRating.get('Thammasat University Hospital')?.toString()}</div>}
+                </div>
+                
        
        
             </div>
