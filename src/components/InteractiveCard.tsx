@@ -34,8 +34,11 @@ const ClientCompCard = ({children,title,ratingHandler,hospitalRating}:{children:
             <div className="w-full h-[10%] px-3">     
                 <Rating  value={value} precision={0.05} size="small" 
                 onChange={(e,newValue)=>{
-                    setValue(newValue);
-                    ratingHandler(title,newValue)}
+                    if(newValue!==null){
+                        setValue(newValue);
+                        ratingHandler(title,newValue)}
+                    }
+                    
                     }/>
                 
             </div>
