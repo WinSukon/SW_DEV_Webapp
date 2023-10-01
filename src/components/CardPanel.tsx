@@ -11,9 +11,6 @@ const CardPanel = () => {
                 return new Map(hospitalRating.set(action.name,action.rating));
             case 'delete':
                 hospitalRating.delete(action.name);
-                // hospitalRating.forEach((value:Number,key:string,map:Map<string,Number>)=>{
-                //     console.log(key,value);
-                // })
                 return new Map(hospitalRating);
             default:
                 return hospitalRating;
@@ -21,30 +18,48 @@ const CardPanel = () => {
     }
     const [hospitalRating,dispatchRating] = useReducer(reducerRating,new Map<string,Number>())
 
+    const data =[{
+                    hid:'001',
+                    title:'Chulalongkorn Hospital', 
+                    imgSrc:'/img/Chulalongkorn Hospital.jpg'
+                 },
+                 {
+                    hid:'002',
+                    title:'Rajavithi Hospital' ,
+                    imgSrc:'/img/Rajavithi Hospital.jpg' 
+
+                 },
+                 {
+                    hid:'003',
+                    title:'Thammasat University Hospital' ,
+                     imgSrc:'/img/Thammasat University Hospital.jpg' 
+                 }]
+
 
     return (  
         <div className="flex flex-col">
             <div className="flex flex-row ">
-                <Card title='Chulalongkorn Hospital' imgSrc='/img/Chulalongkorn Hospital.jpg' ratingHandler={(name:string,value:Number)=>dispatchRating({'type':'add','name':name,'rating':value}) } hospitalRating={hospitalRating}/>
-                <Card title='Rajavithi Hospital' imgSrc='/img/Rajavithi Hospital.jpg' ratingHandler={(name:string,value:Number)=>dispatchRating({'type':'add','name':name,'rating':value})} hospitalRating={hospitalRating}/>
-                <Card title='Thammasat University Hospital' imgSrc='/img/Thammasat University Hospital.jpg' ratingHandler={(name:string,value:Number)=>dispatchRating({'type':'add','name':name,'rating':value})} hospitalRating={hospitalRating}/>
+
+                {data.map((hos)=>(
+                    <Card title={hos.title}
+                        imgSrc={hos.imgSrc}
+                        ratingHandler={(name:string,value:Number)=>dispatchRating({'type':'add','name':name,'rating':value})} 
+                        hospitalRating={hospitalRating}
+                    />
+                ))}
 
             </div>
             <div>
                 <div className='text-xl'>Rating list</div>
                 <div className="p-3 ">
-                    {hospitalRating.has('Chulalongkorn Hospital') && <div onClick={()=>dispatchRating({'type':'delete','name':'Chulalongkorn Hospital','rating':0})}>Chulalongkorn Hospital Rating = {hospitalRating.get('Chulalongkorn Hospital')?.toString()}</div>}
-                    {hospitalRating.has('Rajavithi Hospital') && <div onClick={()=>dispatchRating({'type':'delete','name':'Rajavithi Hospital','rating':0})}>Rajavithi Hospital Rating = {hospitalRating.get('Rajavithi Hospital')?.toString()}</div>}
-                    {hospitalRating.has('Thammasat University Hospital') && <div onClick={()=>dispatchRating({'type':'delete','name':'Thammasat University Hospital','rating':0})}>Thammasat University Hospital Rating = {hospitalRating.get('Thammasat University Hospital')?.toString()}</div>}
+
+                    {Array.from(hospitalRating).map((data)=>
+                    <div onClick={()=>dispatchRating({'type':'delete','name':data[0],'rating':0})}>
+                    {data[0]} Rating = {data[1].toString()}</div>)}
+    
                 </div>
-                
-       
-       
             </div>
-          
         </div>  
-     
-      
     );
 }
  

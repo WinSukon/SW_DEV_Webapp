@@ -21,14 +21,7 @@ const banner = ({name}:{name:string}) => {
                     <h1 className="text-6xl font-medium">Our Services</h1>
                     <p className="text-2xl font-serif">{name}</p>
                 </div>
-                
-
-
             </div>
-  
-        
-
-
      );
 }
  

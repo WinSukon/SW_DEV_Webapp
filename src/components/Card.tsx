@@ -11,7 +11,7 @@ const Card = (prop:{title:string,imgSrc:string,ratingHandler:Function,hospitalRa
                 <Image src={prop.imgSrc} alt='Product Picture' fill={true} className="object-cover rounded-t-lg"></Image>
 
             </div>
-            <div className="w-full h-[20%] p-[10px] text-center ">{prop.title}</div>
+            <div className="w-full h-[20%] p-[10px] text-center  ">{prop.title}</div>
          
         </ClientCompCard>
             

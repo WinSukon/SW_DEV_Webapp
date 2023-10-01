@@ -42,5 +42,4 @@ const ClientCompCard = ({children,title,ratingHandler,hospitalRating}:{children:
        </div> 
     );
 }
- 
 export default ClientCompCard;
