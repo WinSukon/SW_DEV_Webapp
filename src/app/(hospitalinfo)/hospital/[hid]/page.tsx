@@ -9,7 +9,7 @@ const HospitalDetails = ({params}:{params:{hid:string}}) => {
         title:'Rajavithi Hospital' ,
         imgSrc:'/img/Rajavithi Hospital.jpg' 
      })
-     mockdata.set('002',{
+     mockdata.set('003',{
         title:'Thammasat University Hospital' ,
         imgSrc:'/img/Thammasat University Hospital.jpg' 
      })

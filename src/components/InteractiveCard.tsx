@@ -39,7 +39,12 @@ const ClientCompCard = ({children,title,ratingHandler,hospitalRating}:{children:
                         ratingHandler(title,newValue)}
                     }
                     
-                    }/>
+                    }
+                onClick={(e)=>{
+                    // e.preventDefault()
+                    e.stopPropagation()
+
+                }}/>
                 
             </div>
        </div> 
