@@ -1,6 +1,6 @@
 import CardPanel from "@/components/CardPanel";
 
-export default function HospitalDetails (){
+export default function AllHospital (){
     return ( 
         <main>
             <h1>hos id </h1>

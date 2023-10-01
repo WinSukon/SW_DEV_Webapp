@@ -1,6 +1,8 @@
 'use client'
 import {useReducer} from 'react'
 import Card from "./Card";
+import Link from 'next/link';
+
 
 const CardPanel = () => {
 
@@ -41,11 +43,14 @@ const CardPanel = () => {
             <div className="flex flex-row ">
 
                 {data.map((hos)=>(
-                    <Card title={hos.title}
+                    <Link href={`/hospital/${hos.hid}`}>
+                          <Card title={hos.title}
                         imgSrc={hos.imgSrc}
                         ratingHandler={(name:string,value:Number)=>dispatchRating({'type':'add','name':name,'rating':value})} 
                         hospitalRating={hospitalRating}
                     />
+                    </Link>
+              
                 ))}
 
             </div>
