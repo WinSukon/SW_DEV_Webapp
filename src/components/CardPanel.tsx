@@ -2,6 +2,7 @@
 import {useReducer} from 'react'
 import Card from "./Card";
 import Link from 'next/link';
+import TestHook from './TestHook';
 
 
 const CardPanel = () => {
@@ -64,6 +65,7 @@ const CardPanel = () => {
     
                 </div>
             </div>
+            <TestHook></TestHook>
         </div>  
     );
 }

@@ -1,5 +1,5 @@
 import Banner from '@/components/Banner'
-import CardPanel from '@/components/CardPanel'
+import PromoteCard from '@/components/PromoteCard'
 
 
 export default function Home() {
@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <main className="flex flex-col justify-between items-center min-h-screen">
       <Banner {...data}/>
+      <PromoteCard ></PromoteCard>
     </main>
   )
 }
