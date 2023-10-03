@@ -1,10 +1,12 @@
 'use client'
 import {useState} from 'react'
 import VideoPlayer from "./VideoPlayer";
+import { useWindowListener } from '@/hooks/useWindowListener';
 
 const PromoteCard = () => {
     const [playing,setPlay] = useState(true)
 
+    useWindowListener('contextmenu',(e)=>{e.preventDefault()});
     return ( 
         <div className='flex flex-row w-[60vw] shadow-lg p-2 justify-around bg-slate-300 m-5 rounded-md'>
         
