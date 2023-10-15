@@ -3,7 +3,7 @@ import Image from "next/image";
 import ClientCompCard from "./InteractiveCard";
 
 
-const Card = (prop:{title:string,imgSrc:string,ratingHandler:Function,hospitalRating:Map<string,Number>}) => {
+const Card = (prop:{title:string,imgSrc:string,ratingHandler?:Function,hospitalRating?:Map<string,Number>}) => {
     return ( 
         //! using tailwind css
         <ClientCompCard title={prop.title} ratingHandler={prop.ratingHandler} hospitalRating={prop.hospitalRating}>
