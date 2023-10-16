@@ -8,12 +8,10 @@ const hospitalCatalog = ({hosJson}:{hosJson:Object}) => {
         <div className="flex flex-col">
             <div className="flex flex-row ">
 
-                {hosJson.data.map((hos)=>(
-                    <Link href={`/hospital/${hos._id}`}>
+                {hosJson.data.map((hos:Object)=>(
+                    <Link href={`/hospital/${hos.id}`}>
                         <Card title={hos.name}
                         imgSrc={hos.picture}
-                        ratingHandler={(name:string,value:Number)=>dispatchRating({'type':'add','name':name,'rating':value})} 
-                        hospitalRating={hospitalRating}
                     />
                     </Link>
             
