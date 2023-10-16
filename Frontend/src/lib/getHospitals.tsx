@@ -12,10 +12,6 @@ export default async function getHospitals() {
     }
     console.log(json)
     return json;
-
-    
-    
-
 } ;
 
 
