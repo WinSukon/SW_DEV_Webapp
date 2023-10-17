@@ -11,7 +11,9 @@ export default function AllHospital (){
     return ( 
         <main className="flex flex-col justify-between items-center min-h-screen">
             {/* <CardPanel></CardPanel> */}
-            <Suspense fallback={<p>Loading...<LinearProgress></LinearProgress></p>}>
+            <Suspense fallback={
+            <p className="text-lg">Loading...<LinearProgress></LinearProgress></p>
+            }>
                 <HospitalCatalog hosJson={hospitals} ></HospitalCatalog>
             </Suspense>
         </main>

@@ -29,7 +29,7 @@ const ClientCompCard = ({children,title,ratingHandler,hospitalRating}:{children:
     },[hospitalRating])
 
     return ( 
-       <div className="w-[250px] h-[300px] rounded-lg m-8 shadow-lg bg-white"
+       <div className="w-[250px] h-[300px] rounded-lg m-8 shadow-xl bg-white"
        onMouseOver={(e)=>onMouseAction(e)}
        onMouseOut={(e)=>onMouseAction(e)}>
             {children}
