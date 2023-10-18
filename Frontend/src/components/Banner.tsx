@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import {useSession} from 'next-auth/react';
 
 const banner = ({name}:{name:string}) => {
 
@@ -13,6 +14,8 @@ const banner = ({name}:{name:string}) => {
                     "/img/vaccine-banner.jpg"];
     
     const router=useRouter()
+
+    const {data:session} = useSession();
     return ( 
         
             <div className="block h-[80vh] w-[100vw] m-[0px] relative" onClick={()=>(setIndex(index+1))}>
@@ -26,6 +29,9 @@ const banner = ({name}:{name:string}) => {
                     <p className="text-2xl font-serif">{name}</p>
 
                 </div>
+                {session ? 
+                <div className="absolute z-30 top-5 right-10 font-semibold text-cyan-800 text-xl">Hello {session.user?.name}</div> : null
+                }
                 <button className="absolute m-6 px-2 py-1 rounded-md text-lg bg-white bottom-0 right-0 hover:bg-neutral-200" 
                 onClick={(e)=>{e.stopPropagation(); router.push('/hospital')}}>Hospital Info</button>
 
