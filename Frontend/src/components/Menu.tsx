@@ -14,13 +14,13 @@ const Menu = async () => {
         <div className="flex flex-row h-12 justify-between border-2">
             <div className='flex'>
                 {session ? 
-                <Link href="/api/auth/signout" className=' items-center absolute  h-full px-2 text-sm border-solid border-2 border-sky-500 w-[120px]' >
-                    {/* <div className="">Sign-Out</div> */}
+                <Link href="/api/auth/signout" className='w-[120px] h-full bg-gray-100 pt-[8px] 
+                text-center mt-auto mb-auto hover:bg-gray-200' >
                     Sign-Out
                 </Link> 
                 : 
-                <Link href="/api/auth/signin" className=' items-center absolute  h-full px-2  text-sm border-solid border-2 border-sky-500  w-[120px]'>
-                    {/* <div className="">Sign-In</div> */}
+                <Link href="/api/auth/signin" className=' w-[120px] h-full bg-gray-100 pt-[8px] 
+                text-center mt-auto mb-auto hover:bg-gray-200'>
                     Sign-In
                 </Link>}
             </div>
