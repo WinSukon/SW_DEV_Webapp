@@ -9,7 +9,6 @@ import { Link } from '@mui/material';
 const Menu = async () => {
 
     const session = await getServerSession(authOptions)
-    if(session) console.log(session);
     return ( 
 
         <div className="flex flex-row h-12 justify-between border-2">

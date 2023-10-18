@@ -2,7 +2,6 @@ import NextAuth from "next-auth/next";
 import { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
 
-
 export const authOptions:AuthOptions={
     providers:[
         //! use Credentials Provider (got template from https://next-auth.js.org/configuration/providers/credentials)
@@ -28,7 +27,8 @@ export const authOptions:AuthOptions={
               // Return null if user data could not be retrieved
               return null
             }
-          })
+          }),
+
 
     ],
     session:{strategy:'jwt'}
