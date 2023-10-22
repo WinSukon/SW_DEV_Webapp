@@ -6,15 +6,35 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import MyText from "./MyText";
 import {useState} from 'react';
-import {Dayjs} from 'dayjs';
+import dayjs, {Dayjs} from 'dayjs';
+
+import {useDispatch} from 'react-redux';
+import { AppDispatch } from "@/redux/store";
+import { BookingItem } from "@/interface";
+import { addBooking, bookslice } from "@/redux/feature/bookSlice";
 
 const Form = () => {
+    //all values
     const [name,setName] = useState<string>('');
     const [surname,setSurname] = useState<string>('');
     const [id,setId] = useState<string>('');
-
     const [hos,setHos] = useState<string>('Chulalongkorn Hospital')
     const [date,setDate]=useState<Dayjs|null>(null);
+
+    const dispatch = useDispatch<AppDispatch>();
+
+    const createBooking = () =>{
+        if(name && surname && id && hos && date){
+            const item:BookingItem={
+                name:name,
+                surname:surname,
+                id:id,
+                hospital:hos,
+                date:dayjs(date).format("YYYY/MM/DD")
+            }
+            dispatch(addBooking(item));
+        }
+    }
 
     const handleHosChange=(event: SelectChangeEvent)=>{
         setHos(event.target.value);
@@ -52,7 +72,13 @@ const Form = () => {
 
             </div>
             <div className="left-[46%] absolute m-0">
-                <button className="rounded-md bg-sky-600 text-white px-3 py-2  shadow-sm hover:bg-indigo-600">Confirm</button>
+                <button className="rounded-md bg-sky-600 text-white px-3 py-2  shadow-sm hover:bg-indigo-600"
+                    onClick={(e)=>{
+                        console.log(name,surname,id,hos,date?.toString()); 
+                        e.preventDefault();
+                        createBooking;
+                     }}
+                >Confirm Booking</button>
 
             </div>
 
