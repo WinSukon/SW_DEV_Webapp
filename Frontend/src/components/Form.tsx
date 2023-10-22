@@ -6,12 +6,17 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import MyText from "./MyText";
 import {useState} from 'react';
+import {Dayjs} from 'dayjs';
 
 const Form = () => {
+    const [name,setName] = useState<string>('');
+    const [surname,setSurname] = useState<string>('');
+    const [id,setId] = useState<string>('');
 
-    const [hos,setHos] = useState('')
+    const [hos,setHos] = useState<string>('Chulalongkorn Hospital')
+    const [date,setDate]=useState<Dayjs|null>(null);
 
-    const handleChange=(event: SelectChangeEvent)=>{
+    const handleHosChange=(event: SelectChangeEvent)=>{
         setHos(event.target.value);
     }
 
@@ -20,9 +25,9 @@ const Form = () => {
             <div className="flex flex-row m-3">
                 <div className="flex flex-col m-4">
                         
-                    <MyText title="First Name"></MyText>
-                    <MyText title="Last Name"></MyText>
-                    <MyText title="Id"></MyText>
+                    <MyText title="First Name" onValChange={(value:string)=>{setName(value)}}></MyText>
+                    <MyText title="Last Name" onValChange={(value:string)=>{setSurname(value)}}></MyText>
+                    <MyText title="Id" onValChange={(value:string)=>{setId(value)}}></MyText>
 
                 </div>
 
@@ -30,24 +35,19 @@ const Form = () => {
                 
                     <div className="text-base p-3">Select Hospital</div>
                     <div className="p-3 mb-4">
-                        <Select variant="standard" label="choose hospital" className="w-[280px]" value={hos} onChange={handleChange}>
+                        <Select variant="standard" label="choose hospital" className="w-[280px]" value={hos} onChange={handleHosChange}>
                             <MenuItem value={'Chulalongkorn Hospital'}>Chulalongkorn Hospital</MenuItem>
                             <MenuItem value={'Rajavithi Hospital'}>Rajavithi Hospital</MenuItem>
                             <MenuItem value={'Thammasat University Hospital'}>Thammasat University Hospital</MenuItem>
-
                         </Select>
                     </div>
 
                     <div className="p-3 mt-4">Select Date</div>
                     <div className="p-3">
-                        
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DatePicker></DatePicker>
+                            <DatePicker value={date} onChange={(newDate)=>{setDate(newDate)}}></DatePicker>
                         </LocalizationProvider>
                     </div>
-
-                    
-
                 </div>
 
             </div>

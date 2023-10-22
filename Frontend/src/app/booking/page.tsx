@@ -21,7 +21,6 @@ export default async function booking() {
 
     return ( 
         <main>
-        
             <div className='flex flex-col items-center '>
                 <div className="bg-slate-100 m-5 p-5">
                     <div className="text-2xl">
@@ -41,6 +40,6 @@ export default async function booking() {
                 <Form></Form>
             </div>
         </main>
-     );
+    );
 }
  
