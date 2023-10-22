@@ -1,4 +1,4 @@
-interface BookingItem{
+export interface BookingItem{
     name:string,
     sirname:string,
     id:string,
