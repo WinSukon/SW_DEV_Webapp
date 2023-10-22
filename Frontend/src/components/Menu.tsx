@@ -23,6 +23,7 @@ const Menu = async () => {
                 text-center mt-auto mb-auto hover:bg-gray-200'>
                     Sign-In
                 </Link>}
+                <MenuItem title='mybooking' url='/mybooking'></MenuItem>
             </div>
        
 
