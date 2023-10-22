@@ -14,11 +14,8 @@ export default async function booking() {
                     <Form></Form>
                 </div>
             </main>
-        );
-        
+        ); 
     } 
-  
-  
     const profile = await getUserProfile(session.user.token)
     var createAt = new Date(profile.data.createdAt);
 
