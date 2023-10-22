@@ -23,12 +23,15 @@ export default function mybooking(){
                 
                 :
                 <div className="flex flex-col bg-slate-200 rounded px-5 mx-5 py-2 my-2" key={bookItems[0].id}>
-                    <div className="text-xl">{bookItems[0].name} {bookItems[0].surname}</div>
+                    <div className="text-2xl">{bookItems[0].name} {bookItems[0].surname}</div>
                     <div className="text-lg">{bookItems[0].id}</div>
                     <div className="text-lg">{bookItems[0].hospital}</div>
                     <div className="text-lg">{bookItems[0].date}</div>
-                    <button className="rounded-md bg-sky-600 text-white px-3 py-2  shadow-sm hover:bg-indigo-600" 
-                    onClick={cancel}>Cancel Booking</button>
+                    <div className="left-[46%]  m-0">
+                        <button className="rounded-md bg-sky-600 text-white px-3 py-2  shadow-sm hover:bg-indigo-600" 
+                        onClick={cancel}>Cancel Booking</button>
+                    </div>
+                    
                 </div>
                 
             }
