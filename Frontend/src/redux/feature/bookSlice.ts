@@ -17,6 +17,7 @@ export const bookslice = createSlice({
             state.bookItems.push(action.payload)
             if(state.bookItems.length>1){
                 state.bookItems.shift();
+    
             }
         },
         cancelBooking: (state)=>{

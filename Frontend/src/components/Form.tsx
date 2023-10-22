@@ -41,7 +41,7 @@ const Form = () => {
     }
 
     return (  
-        <form >
+        <div >
             <div className="flex flex-row m-3">
                 <div className="flex flex-col m-4">
                         
@@ -73,17 +73,13 @@ const Form = () => {
             </div>
             <div className="left-[46%] absolute m-0">
                 <button className="rounded-md bg-sky-600 text-white px-3 py-2  shadow-sm hover:bg-indigo-600"
-                    onClick={(e)=>{
-                        console.log(name,surname,id,hos,date?.toString()); 
-                        e.preventDefault();
-                        createBooking;
-                     }}
+                    onClick={createBooking}
                 >Confirm Booking</button>
 
             </div>
 
            
-        </form>
+        </div>
     );
 }
  
