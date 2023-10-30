@@ -1,5 +1,5 @@
 import {useState} from 'react';
-const MyText = ({title,onValChange}:{title:string,onValChange?:Function}) => {
+const MyText = ({title,placeholder,onValChange}:{title:string,placeholder?:string,onValChange?:Function}) => {
     const [val,setVal] = useState<string>('');
     return (  
         <div className="">
@@ -7,7 +7,8 @@ const MyText = ({title,onValChange}:{title:string,onValChange?:Function}) => {
             <div className="p-2">
                 <input className="p-1 rounded ring-1 ring-inset ring-gray-400 text-md leading-6 indent-2 placeholder:text-gray-400"
                 type="text" 
-                placeholder={title}
+                placeholder={placeholder}
+                name={title}
                 value={val}
                 onChange={(e)=>{
                     setVal(e.target.value); 
