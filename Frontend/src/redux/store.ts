@@ -13,7 +13,7 @@ const rootReducer = combineReducers({bookSlice})
 const reduxPersistedReducer = persistReducer(persistConfig,rootReducer)
 
 export const store = configureStore({
-        reducer:reduxPersistedReducer;
+        reducer:reduxPersistedReducer
 })
 
 export type Rootstate = ReturnType<typeof store.getState>
