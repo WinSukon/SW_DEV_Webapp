@@ -3,6 +3,7 @@ import HospitalCatalog from "@/components/HospitalCatalog";
 import getHospitals from "@/lib/getHospitals";
 import {Suspense} from 'react';
 import { LinearProgress } from "@mui/material";
+import AddHospitalForm from "@/components/AddHospitalForm";
 
 export default function AllHospital (){
 
@@ -15,6 +16,8 @@ export default function AllHospital (){
             <p className="text-lg">Loading...<LinearProgress></LinearProgress></p>
             }>
                 <HospitalCatalog hosJson={hospitals} ></HospitalCatalog>
+
+                <AddHospitalForm></AddHospitalForm>
             </Suspense>
         </main>
      );
