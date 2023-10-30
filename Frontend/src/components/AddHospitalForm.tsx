@@ -17,9 +17,6 @@ const AddHospitalForm = () => {
                 <MyText title="Tel" ></MyText>
                 <MyText title="Picture" ></MyText>
             </div>
-     
-
-
         </div> 
     );
 }
