@@ -1,7 +1,9 @@
-'use client'
+
 import { dbConnect } from "@/db/dbConnect";
 import MyText from "./MyText";
 import Hospital from "@/db/models/Hospital";
+import { revalidatePath} from "next/cache";
+import { redirect } from "next/navigation";
 
 const AddHospitalForm = () => {
 
@@ -32,6 +34,7 @@ const AddHospitalForm = () => {
         catch(error){
             console.log(error)
         }
+        revalidatePath('/hospital')
 
     }
 
@@ -43,7 +46,7 @@ const AddHospitalForm = () => {
                     <MyText title="Name"></MyText>
                     <MyText title="Address" ></MyText>
                     <MyText title="District" ></MyText>
-                    <button>Submit</button>
+                    <button type="submit">Submit</button>
                 </div>
                 <div className="flex flex-col">
                     <MyText title="Province" ></MyText>

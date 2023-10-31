@@ -1,3 +1,4 @@
+'use client'
 import {useState} from 'react';
 const MyText = ({title,placeholder,onValChange}:{title:string,placeholder?:string,onValChange?:Function}) => {
     const [val,setVal] = useState<string>('');
