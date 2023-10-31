@@ -40,19 +40,21 @@ const AddHospitalForm = () => {
 
     return ( 
         <form action={addHospital}>
-            <h1>Add your hospital</h1>
+            <div className="text-2xl text-center">Add your hospital</div>
             <div className="flex flex-row">
                 <div className="flex flex-col">
                     <MyText title="Name"></MyText>
                     <MyText title="Address" ></MyText>
                     <MyText title="District" ></MyText>
-                    <button type="submit">Submit</button>
+                    <MyText title="Province" ></MyText>
                 </div>
                 <div className="flex flex-col">
-                    <MyText title="Province" ></MyText>
                     <MyText title="Postalcode" ></MyText>
                     <MyText title="Tel" ></MyText>
                     <MyText title="Picture" placeholder="URL"></MyText>
+                    <div className="flex left-[36%] top-[10%] relative ">
+                        <button type="submit"className="rounded-md bg-sky-600 text-white px-3 py-2  shadow-sm hover:bg-indigo-600 relative">Submit</button>
+                    </div>
                 </div>
             </div> 
         </form>
