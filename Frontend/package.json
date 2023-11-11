@@ -10,7 +10,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "cypress": "cypress open",
-    "e2e" : "start-server-and-test dav 3000 cypress"
+    "e2e" : "start-server-and-test dev 3000 cypress"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

@@ -14,17 +14,19 @@ export default async function AllHospital (){
 
     const session = await getServerSession(authOptions);
 
-    if(!session) return(
-        <main className="flex flex-col justify-between items-center min-h-screen">
-        {/* <CardPanel></CardPanel> */}
-        <Suspense fallback={
-        <p className="text-lg">Loading...<LinearProgress></LinearProgress></p>
-        }>
-            <HospitalCatalog hosJson={hospitals} ></HospitalCatalog>
-
-        </Suspense>
-    </main>
-    )
+    if(!session ) {
+        return(
+            <main className="flex flex-col justify-between items-center min-h-screen">
+            {/* <CardPanel></CardPanel> */}
+            <Suspense fallback={
+            <p className="text-lg">Loading...<LinearProgress></LinearProgress></p>
+            }>
+                <HospitalCatalog hosJson={hospitals} ></HospitalCatalog>
+    
+            </Suspense>
+        </main>
+        );
+    }
 
     const profile = await getUserProfile(session.user.token);
 
