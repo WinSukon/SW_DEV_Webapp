@@ -2,7 +2,7 @@
 import Card from "./Card";
 import Link from 'next/link';
 
-const hospitalCatalog = async ({hosJson}:{hosJson:Object}) => {
+const HospitalCatalog = async ({hosJson}:{hosJson:Object}) => {
     const hosJsonReady = await hosJson;
     return ( 
         <div className="flex flex-row flex-wrap p-[10px] justify-around">
@@ -19,4 +19,4 @@ const hospitalCatalog = async ({hosJson}:{hosJson:Object}) => {
     );
 }
  
-export default hospitalCatalog;
+export default HospitalCatalog;
